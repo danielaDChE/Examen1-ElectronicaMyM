@@ -20,11 +20,12 @@ class ProductoController extends Controller
         if ($request->has('marca_id')) {
             $query->where('marca_id', $request->marca_id);
         }
+         return $query->get();
 
-        return response()->json([
-            'data' => $query->get(),
-            'status' => 'success'
-        ], 200);
+      //  return response()->json([
+      //      'data' => $query->get(),
+      //      'status' => 'success'
+      //  ], 200);
     }
 
     /**
@@ -107,4 +108,5 @@ class ProductoController extends Controller
             'message' => 'Producto eliminado correctamente'
         ], 200);
     }
+    
 }
